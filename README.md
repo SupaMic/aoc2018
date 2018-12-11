@@ -1,3 +1,3 @@
 # aoc2018
-SPOILER ALERT
+__SPOILER ALERT__  
 Advent of Code 2018 Solutions
