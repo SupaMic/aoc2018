@@ -40,3 +40,30 @@ function getAllIndexes(arr, val) {
             indexes.push(i);
     return indexes;
 }
+
+
+/*Part 2*/
+
+var tinydata2 = ["abcde","fghij","klmno","pqrst","fguij","axcye","wvxyz"]  // correct box is fgij
+
+function findBox(array){
+	let result;
+	array.forEach( function( str , i , arr) {
+		let comparer, letterIndex;
+		for(letterIndex=0;letterIndex<str.length;letterIndex++){
+			comparer = spliceLetter(str, letterIndex);
+			arr.forEach(function( str2, ii, arr2 ){
+				if(comparer == spliceLetter(str2, letterIndex) &&  i != ii) {
+					result = comparer;
+				}
+			})
+		}
+	})
+	return result;
+}
+
+function spliceLetter(str, i){
+	let strArr = str.split("");
+	strArr.splice(i, 1);
+	return strArr.join('');
+}
